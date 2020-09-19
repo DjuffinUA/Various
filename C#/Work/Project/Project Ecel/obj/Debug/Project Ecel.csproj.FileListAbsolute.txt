@@ -1,0 +1,7 @@
+D:\GitHub\Various\C#\Work\Project\Project Ecel\bin\Debug\Project Ecel.exe.config
+D:\GitHub\Various\C#\Work\Project\Project Ecel\bin\Debug\Project Ecel.exe
+D:\GitHub\Various\C#\Work\Project\Project Ecel\bin\Debug\Project Ecel.pdb
+D:\GitHub\Various\C#\Work\Project\Project Ecel\obj\Debug\Project Ecel.csprojAssemblyReference.cache
+D:\GitHub\Various\C#\Work\Project\Project Ecel\obj\Debug\Project Ecel.csproj.CoreCompileInputs.cache
+D:\GitHub\Various\C#\Work\Project\Project Ecel\obj\Debug\Project Ecel.exe
+D:\GitHub\Various\C#\Work\Project\Project Ecel\obj\Debug\Project Ecel.pdb

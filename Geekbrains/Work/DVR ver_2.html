@@ -1,0 +1,94 @@
+    <!DOCTYPE html>
+    <html lang="ru">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>DVR ver_2</title>
+        <!-- <link rel="stylesheet" href="DVR%20ver_2.css"> -->
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background: #181818;
+                color: #EFEFEE;
+                font-size: 16px
+            }
+
+            main {
+                color: white;
+            }
+
+            main #settings {
+                text-align: left;
+            }
+
+            main #content {}
+
+            main #network {}
+
+            #menu_settings {
+                flex-wrap: nowrap;
+                min-width: 340px;
+                background: #363636;
+                padding: 8px;
+                border-radius: 4px;
+                margin-top: 10px;
+                margin-right: 10px;
+            }
+
+
+            h {
+                font-size: 18px;
+            }
+
+            .grid-container {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                padding: 10px;
+            }
+
+            .grid-item {}
+
+        </style>
+    </head>
+
+    <body>
+        <main class="grid-container">
+            <div class="grid-item" id="settings">
+                <label for="settings">☰&nbsp;&nbsp;Toggle DVR settings</label>
+                <div id="menu_settings">
+                    <h>Video</h>
+                    <div>
+                        <input type="radio" name="video" id="record" checked>
+                        <label for="record">Record</label>
+                        <input type="radio" name="video" id="preview">
+                        <label for="preview">Preview</label>
+                    </div>
+                    <div>
+                        <label for="framesize">Resolution</label>
+                        <select id="framesize" class="default-action">
+                            <option value="10">UXGA(1600x1200)</option>
+                            <option value="9">SXGA(1280x1024)</option>
+                            <option value="8">XGA(1024x768)</option>
+                            <option value="7">SVGA(800x600)</option>
+                            <option value="6">VGA(640x480)</option>
+                            <option value="5" selected="selected">CIF(400x296)</option>
+                            <option value="4">QVGA(320x240)</option>
+                            <option value="3">HQVGA(240x176)</option>
+                            <option value="0">QQVGA(160x120)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item" id="content">
+                2
+            </div>
+            <div class="grid-item" id="network">
+                3
+            </div>
+        </main>
+        <script>
+
+        </script>
+    </body>
+
+    </html>

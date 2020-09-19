@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загадки с журнала "Мурзилка"</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: black;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        main {
+            margin: 5%;
+        }
+
+        h {
+            font-size: 18px;
+            margin: 15px 20px;
+        }
+
+        p {
+            margin: 15px 20px;
+        }
+
+        .button {
+            border-radius: 10px;
+            background: CornflowerBlue;
+            color: goldenrod;
+            margin: 15px 20px;
+            padding: 10px;
+            font-size: 18px;
+            transition-duration: 0.4s;
+        }
+
+        .button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        output {
+            margin: 15px 20px;
+        }
+
+        output selection {
+            margin: 15px 20px;
+        }
+
+        footer {}
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <h>Загадки</h>
+        <p>
+            После нажатия на кнопку "Начать" перед вами выскочит окно с загадкой.<br>
+            После того как прочтете загадку нажимаете на "ок" и в новом окне вводим ответ.<br>
+            Загадок будет 7 и если вы дадите на весе верные ответы то с задачей вы справились.
+        </p>
+        <div>
+            <input type="button" class="button" id="fan" onclick="game()" value="Начать">
+        </div>
+    </main>
+    <output>
+        <div>
+            <div style="margin: 10px" id="zagadka0"></div>
+            <div id="otvet0" style="color: aqua"></div>
+            <div id="zagadka1" style="margin: 10px"></div>
+            <div id="otvet1" style="color: aqua"></div>
+            <div id="zagadka2" style="margin: 10px"></div>
+            <div id="otvet2" style="color: aqua"></div>
+            <div id="zagadka3" style="margin: 10px"></div>
+            <div id="otvet3" style="color: aqua"></div>
+            <div id="zagadka4" style="margin: 10px"></div>
+            <div id="otvet4" style="color: aqua"></div>
+            <div id="zagadka5" style="margin: 10px"></div>
+            <div id="otvet5" style="color: aqua"></div>
+            <div id="zagadka6" style="margin: 10px"></div>
+            <div id="otvet6" style="color: aqua"></div>
+            <div id="continium" style="margin: 10px"></div>
+        </div>
+    </output>
+    <footer>
+        <div>
+            <h>Загадки про сказочных героев. Страница создана в рамках обучения веб-дизайну.</h>
+        </div>
+    </footer>
+    <script>
+        function game() {
+
+            let zagadka0 = "Была она артисткой\nПрекрасной, как звезда,\nОт злого Карабаса\nСбежала навсегда.";
+            let zagadka1 = "Уплетая калачи,\nЕхал парень на печи.\nПрокатился по деревне\nИ женился на царевне.";
+            let zagadka2 = "Сладкий яблок аромат\nЗаманил ту птицу в сад.\nПерья светятся огнём,\nИ светло вокруг, как днём.";
+            let zagadka3 = "Он разбойник, он злодей,\nСвистом он пугал людей.";
+            let zagadka4 = "В гости к бабушке пошла,\nПироги ей понесла.\nСерый Волк за ней следил,\nОбманул и проглотил.";
+            let zagadka5 = "Над простым моим вопросом\nНе потратишь много сил.\nКто мальчишку с длинным носом\nИз полена смастерил ?";
+            let zagadka6 = "Лечит маленьких детей,\nЛечит птичек и зверей,\nСквозь очки свои глядит\nДобрый доктор…";
+            let otvet = "";
+            let key = 0;
+
+            for (let i = 0; i < 7; i++) {
+                if (i == 0) {
+                    alert(zagadka0);
+                    otvet = prompt("Введите ответ");
+                    otvet = otvet.toLowerCase();
+                    if (otvet == "мальвина") {
+                        alert("Верно, вы угадали");
+                        key++;
+                    } else {
+                        alert("Вы не верно ответили.");
+                    }
+                    document.getElementById("zagadka0").innerHTML = "Была она артисткой<br>Прекрасной, как звезда,<br>От злого Карабаса<br>Сбежала навсегда.";
+                    document.getElementById("otvet0").innerHTML = "Верный ответ: Мальвина";
+                } else if (i == 1) {
+                    alert(zagadka1);
+                    otvet = prompt("Введите ответ");
+                    otvet = otvet.toLowerCase();
+                    if (otvet == "емеля") {
+                        alert("Верно, вы угадали");
+                        key++;
+                    } else {
+                        alert("Вы не верно ответили.");
+                    }
+                    document.getElementById("zagadka1").innerHTML = "Уплетая калачи,<br>Ехал парень на печи.<br>Прокатился по деревне<br>И женился на царевне.";
+                    document.getElementById("otvet1").innerHTML = "Верный ответ: Емеля";
+                } else if (i == 2) {
+                    alert(zagadka2);
+                    otvet = prompt("Введите ответ");
+                    otvet = otvet.toLowerCase();
+                    if (otvet == "жар-птица" || otvet == "жарптица") {
+                        alert("Верно, вы угадали");
+                        key++;
+                    } else {
+                        alert("Вы не верно ответили.");
+                    }
+                    document.getElementById("zagadka2").innerHTML = "Сладкий яблок аромат<br>Заманил ту птицу в сад.<br>Перья светятся огнём,<br>И светло вокруг, как днём.";
+                    document.getElementById("otvet2").innerHTML = "Верный ответ: Жар-птица";
+                } else if (i == 3) {
+                    alert(zagadka3);
+                    otvet = prompt("Введите ответ");
+                    otvet = otvet.toLowerCase();
+                    if (otvet == "соловей-разбойник" || otvet == "соловей разбойник") {
+                        alert("Верно, вы угадали");
+                        key++;
+                    } else {
+                        alert("Вы не верно ответили.");
+                    }
+                    document.getElementById("zagadka3").innerHTML = "Он разбойник, он злодей,<br>Свистом он пугал людей.";
+                    document.getElementById("otvet3").innerHTML = "Верный ответ: Соловей-разбойник";
+                } else if (i == 4) {
+                    alert(zagadka4);
+                    otvet = prompt("Введите ответ");
+                    otvet = otvet.toLowerCase();
+                    if (otvet == "красная шапочка" || otvet == "красная-шапочка") {
+                        alert("Верно, вы угадали");
+                        key++;
+                    } else {
+                        alert("Вы не верно ответили.");
+                    }
+                    document.getElementById("zagadka4").innerHTML = "В гости к бабушке пошла,<br>Пироги ей понесла.<br>Серый Волк за ней следил,<br>Обманул и проглотил.";
+                    document.getElementById("otvet4").innerHTML = "Верный ответ: Красная шапочка";
+                } else if (i == 5) {
+                    alert(zagadka5);
+                    otvet = prompt("Введите ответ");
+                    otvet = otvet.toLowerCase();
+                    if (otvet == "папа карло") {
+                        alert("Верно, вы угадали");
+                        key++;
+                    } else {
+                        alert("Вы не верно ответили.");
+                    }
+                    document.getElementById("zagadka5").innerHTML = "Над простым моим вопросом<br>Не потратишь много сил.<br>Кто мальчишку с длинным носом<br>Из полена смастерил ?";
+                    document.getElementById("otvet5").innerHTML = "Верный ответ: Папа Карло";
+                } else if (i == 6) {
+                    alert(zagadka6);
+                    otvet = prompt("Введите ответ");
+                    otvet = otvet.toLowerCase();
+                    if (otvet == "айболит") {
+                        alert("Верно, вы угадали");
+                        key++;
+                    } else {
+                        alert("Вы не верно ответили.");
+                    }
+                    document.getElementById("zagadka6").innerHTML = "Лечит маленьких детей,<br>Лечит птичек и зверей,<br>Сквозь очки свои глядит<br>Добрый доктор…";
+                    document.getElementById("otvet6").innerHTML = "Верный ответ: Айболит";
+                    document.getElementById("continium").innerHTML = ("Вы угадали " + key + " загадок из 7");
+                }
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

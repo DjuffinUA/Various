@@ -1,0 +1,12 @@
+<meta charset="utf-8">
+<script>
+    let nameA = prompt("Название валюты");
+    let nameB = prompt("Название валюты");
+    let moneyA = +prompt("Курс валюты " + nameA);
+    let moneyB = +prompt("Курс валюты " + nameB);
+    let moneyC = +prompt("Сумма для конвертации");
+    let convA = moneyC / moneyA;
+    let convB = moneyC / moneyB;
+    alert("Сумма после конвертации в " + nameA + ": " + convA.toFixed(2) + ", сумма после конвертации в " + nameB + ": " + convB.toFixed(2));
+
+</script>

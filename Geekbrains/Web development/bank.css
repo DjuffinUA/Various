@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    background: black;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+h1 {
+    height: 30px;
+    color: white;
+    font-size: 22px;
+    margin: 5%;
+
+}
+
+main {
+    font-size: 14px;
+    border: 1px solid darkviolet;
+    border-radius: 15px;
+    margin: 5%;
+    padding: 15px;
+
+}
+
+main p {
+    font-size: 14px;
+    color: red;
+}
+
+main div {
+    padding: 10px;
+}
+
+main input {}
+
+footer {
+    font-size: 14px;
+    border: 1px solid darkviolet;
+    border-radius: 15px;
+    margin: 5%;
+    padding: 15px;
+
+}
+
+footer h2 {
+    color: orangered;
+    font-size: 18px;
+
+}
+
+footer #result {
+    color: white;
+    padding: 10px;
+    line-height: 1.5;
+}

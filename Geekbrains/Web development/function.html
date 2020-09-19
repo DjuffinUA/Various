@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function functA(nuber) {
+            let masiv = [];
+            for (let i = 1; i <= n; i++) {
+                masiv.push(i);
+            }
+            return masiv;
+        }
+
+        function sumElementMasiv(mas) {
+            let sun = 0;
+            for (let i = 0; i < mas.length; i++) {
+                sun = sun + mas[i];
+            }
+            return sun;
+        }
+
+        function maxElement(masiv) {
+            let maximus = masiv[0];
+            for (let i = 1; i < masiv.length; i++) {
+                if (maximus < masiv[i]) {
+                    maximus = masiv[i];
+                }
+            }
+            return maximus;
+        }
+
+        function minElement(masiv) {
+            let minimum = masiv[0];
+            for (let i = 1; i < masiv.length; i++) {
+                if (minimum > masiv[i]) {
+                    minimum = masiv[i];
+                }
+            }
+            return minimum;
+        }
+
+        function number(masiv) {
+            let chetmasiv = [];
+            for (let i = 0; i < masiv.length; i++) {
+                if ((masiv[i] % 2) == 0) {
+                    chetmasiv.push(masiv[i]);
+                }
+            }
+            return chetmasiv;
+        }
+
+        let n = +prompt("Введите длину масива");
+        let N = functA(n);
+        let sum = sumElementMasiv(N);
+        let max = maxElement(N);
+        let min = minElement(N);
+        let chetNumber = number(N);
+        alert("min = " + min + ";\nmax = " + max + ";\nsum = " + sum + ";\nmasiv = " + chetNumber);
+
+    </script>
+</body>
+
+</html>

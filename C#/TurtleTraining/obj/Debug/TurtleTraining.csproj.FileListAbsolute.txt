@@ -1,0 +1,10 @@
+D:\GitHub\C#\TurtleTraining\bin\Debug\TurtleTraining.exe.config
+D:\GitHub\C#\TurtleTraining\bin\Debug\TurtleTraining.exe
+D:\GitHub\C#\TurtleTraining\bin\Debug\TurtleTraining.pdb
+D:\GitHub\C#\TurtleTraining\bin\Debug\SmallBasicLibrary.dll
+D:\GitHub\C#\TurtleTraining\bin\Debug\SmallBasicLibrary.xml
+D:\GitHub\C#\TurtleTraining\obj\Debug\TurtleTraining.csprojAssemblyReference.cache
+D:\GitHub\C#\TurtleTraining\obj\Debug\TurtleTraining.csproj.CoreCompileInputs.cache
+D:\GitHub\C#\TurtleTraining\obj\Debug\TurtleTraining.csproj.CopyComplete
+D:\GitHub\C#\TurtleTraining\obj\Debug\TurtleTraining.exe
+D:\GitHub\C#\TurtleTraining\obj\Debug\TurtleTraining.pdb

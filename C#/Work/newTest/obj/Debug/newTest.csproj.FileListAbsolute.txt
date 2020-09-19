@@ -1,0 +1,7 @@
+D:\GitHub\C#\Work\newTest\bin\Debug\newTest.exe.config
+D:\GitHub\C#\Work\newTest\bin\Debug\newTest.exe
+D:\GitHub\C#\Work\newTest\bin\Debug\newTest.pdb
+D:\GitHub\C#\Work\newTest\obj\Debug\newTest.csprojAssemblyReference.cache
+D:\GitHub\C#\Work\newTest\obj\Debug\newTest.csproj.CoreCompileInputs.cache
+D:\GitHub\C#\Work\newTest\obj\Debug\newTest.exe
+D:\GitHub\C#\Work\newTest\obj\Debug\newTest.pdb

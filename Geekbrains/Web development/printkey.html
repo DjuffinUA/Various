@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function meseg() {
+            alert("Поставьте мизинец левой руки на букву Ф, безымянный палец — на Ы, средний — на В, указательный — на А. Мизинец правой руки на букву Ж, безымянный палец — на Д, средний — на Л, указательный — на О. Запомните расположение пальцев. Повторяйте за мной");
+        }
+
+        function print(letters, length) {
+            let masiv = "";
+            for (let i = 0; i < length; i++) {
+                let n = getRandomNumber(letters.length - 1);
+                masiv = masiv + letters[n];
+            }
+            return masiv;
+        }
+
+        function getRandomNumber(max) {
+            return Math.round(Math.random() * max);
+        }
+
+        alert("Учимся печатать в слепую.\nСоздано в рамках обучения JavaScript");
+
+        let start = prompt("Что бы начать обучение напишите: Да");
+        start = start.toLowerCase();
+        if (start == "да") {
+            for (let i = 0; i < 2; i++) {
+                meseg();
+                let text = print(["а", "ф"], 10);
+                let userText = prompt(text);
+                if (userText == text) {
+                    alert("Поздравляю вы справились с заданием!");
+                    i++;
+                    let continium = prompt("Что бы продолжить напишите:  Да или Нет");
+                    continium = continium.toLowerCase();
+                    if (continium == "да") {
+                        for (let n = 0; n < 2; n++) {
+                            text = print(["в", "ы"], 10);
+                            meseg();
+                            userText = prompt(text);
+                            if (userText == text) {
+                                alert("Поздравляю вы справились с заданием!");
+                                n++;
+                                let continium1 = prompt("Что бы продолжить напишите:  Да или Нет");
+                                continium1 = continium.toLowerCase();
+                                if (continium1 == "да") {
+                                    for (let y = 0; y < 2; y++) {
+                                        text = print(["о", "ж"], 10);
+                                        meseg();
+                                        userText = prompt(text);
+                                        if (userText == text) {
+                                            alert("Поздравляю вы справились с заданием!");
+                                            y++;
+                                        } else {
+                                            alert("Выдопустили ошибку!");
+                                            y = 0;
+                                        }
+                                    }
+                                } else if (continium1 != "да") {
+                                    break;
+                                }
+                            } else {
+                                alert("Выдопустили ошибку!");
+                                n = 0;
+                            }
+                        }
+                    } else if (continium != "да") {
+                        break;
+                    }
+                } else {
+                    alert("Выдопустили ошибку!");
+                    i = 0;
+                }
+            }
+
+        }
+
+        /* start = start.toLowerCase(prompt("Что бы продолжить напишите <<Да>>"));
+         if (start == "да") {
+             text = print(["в", "ы"], 10);
+             meseg();
+             userText = prompt(text);
+             if (userText == text) {
+                 alert("Поздравляю вы справились с заданием!");
+                 start = start.toLowerCase(prompt("Что бы продолжить напишите <<Да>>"));
+                 if (start == "да") {
+                     text = print(["о", "ж"], 10);
+                     meseg();
+                     userText = prompt(text);
+                     if (userText == text) {
+                         alert("Поздравляю вы справились с заданием!");
+                     } else if (userText != text) {
+                         alert("Вы допустили ошибку. Попробуйте еще.");
+                         meseg();
+
+                     }
+                 }
+             }
+
+         }*/
+
+    </script>
+</body>
+
+</html>

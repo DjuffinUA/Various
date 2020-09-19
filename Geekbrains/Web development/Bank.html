@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Рассчет вклада</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: black;
+            color: white;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        h1 {
+            height: 30px;
+            color: white;
+            font-size: 22px;
+            margin: 5%;
+
+        }
+
+        main {
+            font-size: 14px;
+            border: 1px solid darkviolet;
+            border-radius: 15px;
+            margin: 5%;
+            padding: 15px;
+
+        }
+
+        main p {
+            font-size: 14px;
+            color: red;
+        }
+
+        main div {
+            padding: 10px;
+        }
+
+        main input {}
+
+        footer {
+            font-size: 14px;
+            border: 1px solid darkviolet;
+            border-radius: 15px;
+            margin: 5%;
+            padding: 15px;
+
+        }
+
+        footer h2 {
+            color: orangered;
+            font-size: 18px;
+
+        }
+
+        footer #result {
+            color: white;
+            padding: 10px;
+            line-height: 1.5;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>JavaScritp который считает размер вклада</h1>
+    <main>
+        <p>
+            Пользователь вводит сумму вклада и процент, который будет начисляться ежегодно. Будет выведен размер вклада поочередно на ближайшие 5 лет.
+        </p>
+        <div>
+            <input type="button" value="Посчитать" OnClick="bank()">
+        </div>
+    </main>
+    <footer>
+        <h2>Сумма который может получить вкладчик:</h2>
+        <div id="result"></div>
+    </footer>
+    <script>
+        function bank() {
+            let vklad = +prompt("Введите сумму вклада");
+            let pocent = +prompt("Ведите процентную ставку без знака процента.\nТолько число, где 1% = 1 , а 3.5% = 3.5");
+            let stavka = pocent / 100;
+            let sum = 0;
+            let suma = "";
+            let god = 1;
+
+            for (god = 1; god < 6; god++) {
+                if (god == 1) {
+                    sum = parseInt(vklad + vklad * stavka);
+                    suma = ("по истечению " + god + " года: " + sum + "; ");
+                } else {
+                    sum = parseInt(sum + vklad * stavka);
+                    suma = (suma + "по истечению " + god + " года: " + sum + "; ");
+                }
+            }
+            document.getElementById("result").innerHTML = ("При сумме вклада " + vklad + " и процентной ставке " + pocent + "%.\n Вкладчик получит: \n" + suma);
+        }
+
+    </script>
+</body>
+
+</html>

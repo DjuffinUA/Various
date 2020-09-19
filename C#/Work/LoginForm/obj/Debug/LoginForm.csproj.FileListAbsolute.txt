@@ -1,0 +1,10 @@
+D:\GitHub\C#\Work\LoginForm\bin\Debug\LoginForm.exe.config
+D:\GitHub\C#\Work\LoginForm\bin\Debug\LoginForm.exe
+D:\GitHub\C#\Work\LoginForm\bin\Debug\LoginForm.pdb
+D:\GitHub\C#\Work\LoginForm\obj\Debug\LoginForm.Form1.resources
+D:\GitHub\C#\Work\LoginForm\obj\Debug\LoginForm.Properties.Resources.resources
+D:\GitHub\C#\Work\LoginForm\obj\Debug\LoginForm.csproj.GenerateResource.cache
+D:\GitHub\C#\Work\LoginForm\obj\Debug\LoginForm.csproj.CoreCompileInputs.cache
+D:\GitHub\C#\Work\LoginForm\obj\Debug\LoginForm.exe
+D:\GitHub\C#\Work\LoginForm\obj\Debug\LoginForm.pdb
+D:\GitHub\C#\Work\LoginForm\obj\Debug\LoginForm.csprojAssemblyReference.cache

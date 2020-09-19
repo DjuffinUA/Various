@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function askForWords(words) {
+            while (words.length != 0) {
+                let i = parseInt(Math.random() * words.length);
+                let userTranslate = prompt("Как переводится слово: " + words[i][0]);
+                userTranslate = userTranslate.toLowerCase();
+                if (userTranslate == words[i][1]) {
+                    alert("Правильно!");
+                    words.splice(i, 1);
+                } else {
+                    alert("Правильный ответ: " + words[i][1]);
+                }
+            }
+        }
+
+        let esyWords = [
+            ["food", "еда"],
+            ["bike", "велосипед"],
+            ["apple", "яблоко"],
+            ["do", "делать"],
+            ["mean", "иметь в виду"]
+        ];
+
+        askForWords(esyWords);
+
+    </script>
+</body>
+
+</html>

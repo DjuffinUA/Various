@@ -1,0 +1,36 @@
+<meta charset="utf-8">
+<script>
+    let answer = parseInt(Math.random() * 100);
+    let nameUser1 = prompt("Имя первого Игрока");
+    let nameUser2 = prompt("Имя второго Игрока");
+    let userAnswer = +prompt("Угадайте число от 0 до 100");
+    let maxTryCount = 10;
+    let User = " ";
+
+    for (let tryCount = 1; tryCount <= maxTryCount; tryCount++) {
+        if (userAnswer == answer) {
+            if ((tryCount % 2) == 0) {
+                User = nameUser2;
+            } else {
+                User = nameUser1;
+            }
+            alert("Поздравляю " + User + ", вы угадали!\nБыло загадано число: " + answer);
+            break;
+        } else if (userAnswer > answer) {
+            alert("Вы ввели слишком большое число.");
+        } else if (userAnswer < answer) {
+            alert("Вы ввели слишком маленькое число.");
+        }
+        if (tryCount == maxTryCount) {
+            alert(nameUser1 + " и " + nameUser2 + ", вы проиграли!\nПобеда за разроботчиком\nБыло загадано число: " + answer);
+            break;
+        }
+        if ((tryCount % 2) == 0) {
+            User = nameUser1;
+        } else {
+            User = nameUser2;
+        }
+        userAnswer = +prompt(User + ", ваш ход. Введите число от 1 до 100\n У вас осталось " + (((maxTryCount - tryCount) / 2).toFixed(0)) + " попыток");
+    }
+
+</script>

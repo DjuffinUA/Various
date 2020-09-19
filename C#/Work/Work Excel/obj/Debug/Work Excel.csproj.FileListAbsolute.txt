@@ -1,0 +1,7 @@
+D:\GitHub\C#\Work\Work Excel\bin\Debug\Work Excel.exe.config
+D:\GitHub\C#\Work\Work Excel\bin\Debug\Work Excel.exe
+D:\GitHub\C#\Work\Work Excel\bin\Debug\Work Excel.pdb
+D:\GitHub\C#\Work\Work Excel\obj\Debug\Work Excel.csprojAssemblyReference.cache
+D:\GitHub\C#\Work\Work Excel\obj\Debug\Work Excel.csproj.CoreCompileInputs.cache
+D:\GitHub\C#\Work\Work Excel\obj\Debug\Work Excel.exe
+D:\GitHub\C#\Work\Work Excel\obj\Debug\Work Excel.pdb

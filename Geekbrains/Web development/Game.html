@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Игра угадай число</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: black;
+            text-align: center;
+            width: auto;
+            height: auto;
+        }
+
+        h1 {
+            width: auto;
+            height: 30px;
+            color: white;
+            font-size: 22px;
+            text-align: center;
+            font-style: normal;
+        }
+
+        h2 {
+            width: auto;
+            color: orangered;
+            font-size: 18px;
+            text-align: center;
+            font-style: normal;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border: 1px solid darkviolet;
+            box-sizing: border-box;
+        }
+
+        main p {
+            font-size: 14px;
+            text-align: center;
+            font-style: normal;
+            color: red;
+        }
+
+        main a {
+            font-size: 14px;
+            text-align: center;
+            font-style: normal;
+            color: fuchsia;
+        }
+
+        footer {
+            font-size: 14px;
+            text-align: center;
+            font-style: normal;
+            justify-content: space-around;
+            border: 1px solid darkviolet;
+            box-sizing: border-box;
+        }
+
+        footer p {
+            text-align: center;
+            font-style: normal;
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Простенькая игра которая написана на JavaScritp</h1>
+    <h2>Правила Игры</h2>
+    <main>
+        <p>
+            Правила в игре самые простые<br>
+            JavaScritp загадывает рендомное число.<br>
+            А Игроки пытаться его угадать.<br>
+            Игра рассчитана на двух Игроков.
+
+        </p>
+        <!--<a href="Chislo.html">Перейти к игре</a> -->
+        <input type="button" value="Начать Игру" name="hello" OnClick="game()">
+    </main>
+    <footer>
+        <p>
+            Были введены числа:
+        </p>
+        <div id=nubber style=" color: white"></div>
+    </footer>
+    <script>
+        function game() {
+            let rendom = +prompt("Введите число от 10");
+            let answer = parseInt(Math.random() * rendom);
+            let nameUser1 = prompt("Имя первого Игрока");
+            let nameUser2 = prompt("Имя второго Игрока");
+            let userAnswer = +prompt("Угадайте число от 0 до " + rendom);
+            let maxTryCount = parseInt(rendom / 10);
+            let User = " ";
+            let number = " ";
+
+            for (let tryCount = 1; tryCount <= maxTryCount; tryCount++) {
+                if (userAnswer == answer) {
+                    if ((tryCount % 2) == 0) {
+                        User = nameUser2;
+                    } else {
+                        User = nameUser1;
+                    }
+                    alert("Поздравляю " + User + ", вы угадали!\nБыло загадано число: " + answer);
+                    break;
+                } else if (userAnswer == 0) {
+                    alert("Игра была окончена игроком");
+                    break;
+                } else if (userAnswer > answer) {
+                    alert("Вы ввели слишком большое число.\nДля выхода введите число 0");
+                } else if (userAnswer < answer) {
+                    alert("Вы ввели слишком маленькое число.\nДля выхода введите число 0");
+                }
+                if ((maxTryCount % 2) != 0) {
+                    maxTryCount = maxTryCount + 1;
+                }
+                if (tryCount == maxTryCount) {
+                    alert(nameUser1 + " и " + nameUser2 + ", вы проиграли!\nПобеда за разроботчиком!\nБыло загадано число: " + answer);
+                    break;
+                }
+                if ((tryCount % 2) == 0) {
+                    User = nameUser1;
+                } else {
+                    User = nameUser2;
+                }
+                number = (number + userAnswer + ", ");
+                userAnswer = +prompt(User + ", ваш ход. Введите число от 1 до " + rendom + "\n У вас осталось " + (((maxTryCount - tryCount) / 2).toFixed(0)) + " попыток\nБыли загаданы числа: " + number);
+                document.getElementById("nubber").innerHTML = (number + "Было загадано число: " + answer);
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+id="fps-group" - FPS
+id="orientation" - Orientation; id="rb1" - 0(градусов); id="rb2" - 180(градусов)
+id="opus-group" - Opus complexity
+id="bps-group" - BPS
+id="frame-group" - Frame duration
+id="sample-group" - Sample rate
+id="mode" - Mode; id="rb3" - Access Point; id="rb4" - Client
+id="ssid" - SSID
+id="psk" - PSK

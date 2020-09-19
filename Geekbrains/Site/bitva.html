@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="min">Min:</label><br>
+    <input type="text" id="min" name="min" value="0"><br>
+    <label for="max">Max:</label><br>
+    <input type="text" id="max" name="max" value="100"><br><br>
+    <button onclick=game(min, max)>Click Me</button>
+    <p id="demo"></p>
+    <script>
+        function game() {
+
+            let answer = parseInt((Math.random() * (max - min)) + min);
+        }
+
+    </script>
+</body>
+
+</html>

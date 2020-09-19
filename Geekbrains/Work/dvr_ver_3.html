@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DVR</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id="video_setting" onclick="OpenCloseVideoMenu()">☰&nbsp;&nbsp;Toggle DVR settings</div>
+        <div id="video_menu" style="display: block">
+            hdp ldf nhb
+        </div>
+        <div> video </div>
+        <div id="network_setting" onclick="OpebCloceNetworkMenu()">☰&nbsp;&nbsp;Network</div>
+        <div id="network_menu" style="display: block"> Pravoe mrnu
+        </div>
+    </main>
+    <script>
+        function OpenCloseVideoMenu() {
+            var obj = document.getElementById('video_menu');
+            obj.style.display = (obj.style.display == "block" ? "none" : "block");
+        }
+
+        function OpebCloceNetworkMenu() {
+            let obj = document.getElementById('network_menu');
+            obj.style.display = (obj.style.display == "block" ? "none" : "block");
+        }
+
+    </script>
+</body>
+
+</html>

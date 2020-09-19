@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Документ без названия</title>
+	<style>
+		.blok {
+			width: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+	<input type="range" step="5" min="0" max="10" onchange="document.getElementById('rangeValue').innerHTML = this.value;">
+		<div class="blok" id="rangeValue">5</div>
+		<!--<span id="rangeValue">5</span> -->
+	</div>
+	<div>
+	<input type="range" step="5" min="0" max="10" onchange="document.getElementById('rangeValue1').innerHTML = this.value;">
+	<span id="rangeValue1">5</span>
+	</div>
+</body>
+</html>

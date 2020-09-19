@@ -1,4 +1,4 @@
-RefDes;Name;Pattern;X (mm);Y (mm);Side;Rotate;Value;;;;;;;;
-C1;CAP_0805;CAP_0805;35.489;12.237;Top;180.0;2.2mkf;;;;;;;;
-C2;CAP_0805;CAP_0805;42.794;18.036;Top;270.0;2.2mkf;;;;;;;;
-C3;CAP_0805;CAP_0805;18.43;июль.66;Top;90.0;10mkf;;;;;;;;
+RefDes;Name;Pattern;X (mm);Y (mm);Side;Rotate;Value;
+C1;CAP_0805;CAP_0805;35.489;12.237;Top;180.0;2.2mkf;
+C2;CAP_0805;CAP_0805;42.794;18.036;Top;270.0;2.2mkf;
+C3;CAP_0805;CAP_0805;18.43;июль.66;Top;90.0;10mkf;

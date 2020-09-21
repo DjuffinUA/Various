@@ -9,14 +9,16 @@ namespace HelloApp
     {
         static void Main(string[] args) // MAIN
         {
-            string path = @"D:\GitHub\Various\C#\Work\test1.csv";
+            string PathIN = @"D:\GitHub\Various\C#\Work\test.csv";
 
-            string text = Reader(path); // text file
+            string PathOut = @"D:\GitHub\Various\C#\Work\TestOut.csv";
 
-            string[,] Newtext = MultiArray(text);
+            string text = Reader(PathIN); // файл в строку
 
+            string[,] Newtext = MultiArray(text); // строку в двумерный масив
 
-            Console.WriteLine(Newtext[0,0] + ";" + Newtext[1,0]);
+            Write(PathOut, Newtext);
+
             Console.ReadLine();
         }
 
@@ -38,7 +40,7 @@ namespace HelloApp
                     string a5 = masivtext[7]; // Value
 
                     //string[] LineText = new string[] { line };
-                    string textline = $"{a1};{a2};{a3};{a4};{a5};\n";
+                    string textline = a1 + ";" + a2 + ";" + a3 + ";" + a4 + ";" + a5 + ";" + "\n";
 
                     text += textline;
                 }
@@ -47,29 +49,69 @@ namespace HelloApp
             }
         }
 
-        private static string[,] MultiArray(string text)
+        private static string[,] MultiArray(string text) // FUNCTION
         {
+            const int st = 5;  // количество столбцов в конечной таблице
             string[] masivtext = text.Split('\n');
-            string[,] NewMasive = (string[,])Array.CreateInstance(typeof(string), masivtext.Length, 6);
+            string[,] NewMasive = (string[,])Array.CreateInstance(typeof(string), masivtext.Length - 1, st); // создание масива по количеству строк
             //string[] masivtext = text.Split('\n');
-            for ( int i = 0; i < masivtext.Length; i++)
+            for ( int i = 0; i < masivtext.Length - 1; i++)
             {
                 string NewText = string.Join(";", masivtext[i]);
                 string[] masivNewText = NewText.Split(';');
-                if (masivNewText[i] != "")
-                {
-                    for (int l = 0; l < 6; l++)
+                //if (masivNewText[i] != "")
+                //{
+                    for (int l = 0; l < st; l++)
                     {
                         NewMasive[i, l] = masivNewText[l];
                     }
-                } else
-                {
-                    break;
-                }
+                //} else
+                //{
+                    //break;
+                //}
                 
             }
 
             return NewMasive;
+        }
+
+        private static void Write(string path, string[,] text)
+        {
+            string NewText = text[0, 0] + ";" + text[0, 1] + ";" + text[0, 2] + ";" + text[0, 3] + ";" + text[0, 4] + ";" + "\n";
+            for (int i = 1; i < text.GetLength(0); i++)
+            {
+                int[] count = (int[])Array.CreateInstance(typeof(int), text.GetLength(0));
+                for (int n = i + 1; n < text.GetLength(0); n++)
+                {
+                    if (text[i, 1] == text[n, 1] && text[i, 2] == text[n, 2] && text[i, 3] == text[n, 3] && text[i, 4] == text[n, 4])
+                    {
+                        text[i, 0] = (text[i, 0] + ", " + text[n, 0]);
+                        count[n] = n;
+                    }
+                }
+
+                NewText = NewText + text[i, 0] + ";" + text[i, 1] + ";" + text[i, 2] + ";" + text[i, 3] + ";" + text[i, 4] + ";" + "\n";
+
+                //i = i + count;
+
+                /*int n = i - 1;
+                if (text[n, 1] == text[i, 1] && text[n, 2] == text[i, 2] && text[n, 3] == text[i, 3] && text[n, 4] == text[i, 4])
+                {
+                    text[n, 0] = text[n, 0] + text[i, 0];
+                    NewText = NewText + text[n, 0] + ";" + text[n, 1] + ";" + text[n, 2] + ";" + text[n, 3] + ";" + text[i, 4] + ";" + "\n";
+                    //i++;
+                }
+                else
+                {
+                    NewText = NewText + text[i, 0] + ";" + text[i, 1] + ";" + text[i, 2] + ";" + text[i, 3] + ";" + text[i, 4] + ";" + "\n";
+                }*/
+
+            }
+
+            using (StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default))
+            {
+                sw.WriteLine(NewText);
+            }
         }
     }
 }

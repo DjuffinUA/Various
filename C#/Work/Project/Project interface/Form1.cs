@@ -31,8 +31,6 @@ namespace Project_interface
             if (openFile.ShowDialog() == DialogResult.Cancel)
                 return;
              PathIN = Path.GetFullPath(openFile.FileName);
-
-            
         }
 
         private void Save_Click(object sender, EventArgs e)
@@ -42,7 +40,6 @@ namespace Project_interface
             if (saveFile.ShowDialog() == DialogResult.Cancel)
                 return;
             PathOut = Path.GetFullPath(saveFile.FileName);
-
         }
 
         public void Run_Click(object sender, EventArgs e)

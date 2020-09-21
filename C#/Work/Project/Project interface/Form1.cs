@@ -27,6 +27,7 @@ namespace Project_interface
         private void Open_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "csv files (*.csv)|*.csv";
             if (openFile.ShowDialog() == DialogResult.Cancel)
                 return;
              PathIN = Path.GetFullPath(openFile.FileName);
@@ -37,6 +38,7 @@ namespace Project_interface
         private void Save_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = "csv files (*.csv)|*.csv";
             if (saveFile.ShowDialog() == DialogResult.Cancel)
                 return;
             PathOut = Path.GetFullPath(saveFile.FileName);

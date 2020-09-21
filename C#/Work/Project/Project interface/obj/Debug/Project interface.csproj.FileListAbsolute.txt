@@ -1,0 +1,10 @@
+D:\GitHub\Various\C#\Work\Project\Project interface\bin\Debug\Project interface.exe.config
+D:\GitHub\Various\C#\Work\Project\Project interface\bin\Debug\Project interface.exe
+D:\GitHub\Various\C#\Work\Project\Project interface\bin\Debug\Project interface.pdb
+D:\GitHub\Various\C#\Work\Project\Project interface\obj\Debug\Project interface.csprojAssemblyReference.cache
+D:\GitHub\Various\C#\Work\Project\Project interface\obj\Debug\Project_interface.Properties.Resources.resources
+D:\GitHub\Various\C#\Work\Project\Project interface\obj\Debug\Project interface.csproj.GenerateResource.cache
+D:\GitHub\Various\C#\Work\Project\Project interface\obj\Debug\Project interface.csproj.CoreCompileInputs.cache
+D:\GitHub\Various\C#\Work\Project\Project interface\obj\Debug\Project interface.exe
+D:\GitHub\Various\C#\Work\Project\Project interface\obj\Debug\Project interface.pdb
+D:\GitHub\Various\C#\Work\Project\Project interface\obj\Debug\Project_interface.Form1.resources

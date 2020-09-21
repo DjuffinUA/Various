@@ -78,34 +78,38 @@ namespace HelloApp
         private static void Write(string path, string[,] text)
         {
             string NewText = text[0, 0] + ";" + text[0, 1] + ";" + text[0, 2] + ";" + text[0, 3] + ";" + text[0, 4] + ";" + "\n";
+
+            string[] count = (string[])Array.CreateInstance(typeof(string), text.GetLength(0));
+
             for (int i = 1; i < text.GetLength(0); i++)
             {
-                int[] count = (int[])Array.CreateInstance(typeof(int), text.GetLength(0));
-                for (int n = i + 1; n < text.GetLength(0); n++)
+                if (text[i, 0] != count[i])
                 {
-                    if (text[i, 1] == text[n, 1] && text[i, 2] == text[n, 2] && text[i, 3] == text[n, 3] && text[i, 4] == text[n, 4])
+                    for (int n = i + 1; n < text.GetLength(0); n++)
                     {
-                        text[i, 0] = (text[i, 0] + ", " + text[n, 0]);
-                        count[n] = n;
+                        if (text[i, 1] == text[n, 1] && text[i, 2] == text[n, 2] && text[i, 3] == text[n, 3] && text[i, 4] == text[n, 4])
+                        {
+                            text[i, 0] = (text[i, 0] + ", " + text[n, 0]);
+                            count[n] = text[n, 0];
+                        }
                     }
-                }
 
-                NewText = NewText + text[i, 0] + ";" + text[i, 1] + ";" + text[i, 2] + ";" + text[i, 3] + ";" + text[i, 4] + ";" + "\n";
-
-                //i = i + count;
-
-                /*int n = i - 1;
-                if (text[n, 1] == text[i, 1] && text[n, 2] == text[i, 2] && text[n, 3] == text[i, 3] && text[n, 4] == text[i, 4])
-                {
-                    text[n, 0] = text[n, 0] + text[i, 0];
-                    NewText = NewText + text[n, 0] + ";" + text[n, 1] + ";" + text[n, 2] + ";" + text[n, 3] + ";" + text[i, 4] + ";" + "\n";
-                    //i++;
-                }
-                else
-                {
                     NewText = NewText + text[i, 0] + ";" + text[i, 1] + ";" + text[i, 2] + ";" + text[i, 3] + ";" + text[i, 4] + ";" + "\n";
-                }*/
 
+                    //i = i + count;
+
+                    /*int n = i - 1;
+                    if (text[n, 1] == text[i, 1] && text[n, 2] == text[i, 2] && text[n, 3] == text[i, 3] && text[n, 4] == text[i, 4])
+                    {
+                        text[n, 0] = text[n, 0] + text[i, 0];
+                        NewText = NewText + text[n, 0] + ";" + text[n, 1] + ";" + text[n, 2] + ";" + text[n, 3] + ";" + text[i, 4] + ";" + "\n";
+                        //i++;
+                    }
+                    else
+                    {
+                        NewText = NewText + text[i, 0] + ";" + text[i, 1] + ";" + text[i, 2] + ";" + text[i, 3] + ";" + text[i, 4] + ";" + "\n";
+                    }*/
+                }
             }
 
             using (StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default))

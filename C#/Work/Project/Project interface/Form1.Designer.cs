@@ -28,13 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.Open = new System.Windows.Forms.Button();
+            this.Save = new System.Windows.Forms.Button();
+            this.Run = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // Open
+            // 
+            resources.ApplyResources(this.Open, "Open");
+            this.Open.Name = "Open";
+            this.Open.UseVisualStyleBackColor = true;
+            this.Open.Click += new System.EventHandler(this.Open_Click);
+            // 
+            // Save
+            // 
+            resources.ApplyResources(this.Save, "Save");
+            this.Save.Name = "Save";
+            this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
+            // 
+            // Run
+            // 
+            resources.ApplyResources(this.Run, "Run");
+            this.Run.Name = "Run";
+            this.Run.UseVisualStyleBackColor = true;
+            this.Run.Click += new System.EventHandler(this.Run_Click);
+            // 
+            // Form1
+            // 
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.Run);
+            this.Controls.Add(this.Save);
+            this.Controls.Add(this.Open);
+            this.Name = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button Open;
+        private System.Windows.Forms.Button Save;
+        private System.Windows.Forms.Button Run;
     }
 }
 

@@ -9,38 +9,192 @@ namespace The_character
 {
     class Program
     {
+     
         static void Main(string[] args)
         {
-            string Name = null, Class = null, Title = null, Characteristics = "Характеристики: ";
-            int Level = 1, Endurance = 0, Strength = 0, Agility = 0, Intellect = 0;
+            string Characteristics = "Характеристики: ";
+            int Level = 1, HP = 100;
 
 
-            Name = Write();
+            string Name = CharacterName();
 
-            Class = ClassName();
+            string Class = ClassName();
 
-            Console.WriteLine("" + Name);
+            Console.WriteLine("Введите титул персонажа");
+            string Title = Console.ReadLine();
 
+            int Vitality = LevelClassEndurance(Level, Class);
+
+            int Strength = LevelClassStrength(Level, Class);
+
+            int Agility = LevelClassAgility(Level, Class);
+
+            int Intellect = LevelClassIntellect(Level, Class);
+
+            int MP = LevelClassMP(Level, Class, Vitality, Strength, Agility, Intellect);
+
+            Console.WriteLine("\n" + "\n" + "Имя персонажа: " + Name );
+            Console.WriteLine("Класс: " + Class);
+            Console.WriteLine("Титул: " + Title);
+            Console.WriteLine(Characteristics);
+            Console.WriteLine("Живучесть " + HP + "%");
+            Console.WriteLine("Выносливость/Манна: " + MP);
+            Console.WriteLine("Уровень: " + Level);
+            Console.WriteLine("Жизнестойкость: " + Vitality);
+            Console.WriteLine("Сила: " + Strength);
+            Console.WriteLine("Ловкость: " + Agility);
+            Console.WriteLine("Интелект: " + Intellect);
+
+            Console.ReadLine();
         }
 
-        static string Write()
+        static string CharacterName()
         {
-            Console.WriteLine("");
+            Console.WriteLine("Введите имя персонажа");
             string Line = Console.ReadLine();
             return Line;
         }
 
         static string ClassName()
         {
-            int n = 0;
             string Class = null;
-            Console.WriteLine("");
-            n = Console.ReadLine();
-            if (n == 1)
+            Console.WriteLine("Выбирите свой класс( а, б, в, г) согласно предложеных:\nа. Воин;\nб. Лучник;\nв. Маг;\nг. Целитель;");
+            string n = Console.ReadLine();
+            if (n == "а")
             {
-                Class = " ";
-            }
+                Class = "Воин";
+            } else if ((n == "б"))
+            {
+                Class = "Лучник";
+            } else if ((n == "в"))
+            {
+                Class = "Маг";
+            } else if ((n == "г"))
+            {
+                Class = "Целитель";
+            } 
             return Class;
         }
+
+        static int LevelClassEndurance(int Level, string Class)
+        {
+            int Endurance = 0;
+
+            if (Class == "Воин")
+            {
+                Endurance = 6 * Level;
+            }
+            else if (Class == "Лучник")
+            {
+                Endurance = 5 * Level;
+            } 
+            else if (Class == "Маг")
+            {
+                Endurance = 5 * Level;
+            } 
+            else if (Class == "Целитель")
+            {
+                Endurance = 5 * Level;
+            }
+
+                return Endurance;
+        }
+
+        static int LevelClassStrength(int Level, string Class)
+        {
+            int Strength = 0;
+
+            if (Class == "Воин")
+            {
+                Strength = 6 * Level;
+            }
+            else if (Class == "Лучник")
+            {
+                Strength = 5 * Level;
+            }
+            else if (Class == "Маг")
+            {
+                Strength = 4 * Level;
+            } 
+            else if (Class == "Целитель")
+            {
+                Strength = 4 * Level;
+            }
+
+                return Strength;
+        }
+
+        static int LevelClassAgility(int Level, string Class)
+        {
+            int Agility = 0;
+
+            if (Class == "Воин")
+            {
+                Agility = 4 * Level;
+            }
+            else if (Class == "Лучник")
+            {
+                Agility = 6 * Level;
+            }
+            else if (Class == "Маг")
+            {
+                Agility = 4 * Level;
+            }
+            else if (Class == "Целитель")
+            {
+                Agility = 4 * Level;
+            }
+
+            return Agility;
+        }
+
+        static int LevelClassIntellect(int Level, string Class)
+        {
+            int Intellect = 0;
+
+            if (Class == "Воин")
+            {
+                Intellect = 4 * Level;
+            }
+            else if (Class == "Лучник")
+            {
+                Intellect = 4 * Level;
+            }
+            else if (Class == "Маг")
+            {
+                Intellect = 7 * Level;
+            }
+            else if (Class == "Целитель")
+            {
+                Intellect = 7 * Level;
+            }
+
+            return Intellect;
+        }
+
+        static int LevelClassMP(int Level, string Class, int V, int S, int A, int I)
+        {
+            int MP = 0;
+
+            if (Class == "Воин")
+            {
+                MP = (V + S) * Level;
+            }
+            else if (Class == "Лучник")
+            {
+                MP = (V + A) * Level;
+            }
+            else if (Class == "Маг")
+            {
+                MP = (V + I) * Level;
+            }
+            else if (Class == "Целитель")
+            {
+                MP = (V + I) * Level;
+            }
+
+            return MP;
+        }
+
     }
 }

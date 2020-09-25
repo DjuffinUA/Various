@@ -1,0 +1,7 @@
+D:\GitHub\Various\C#\The character\bin\Debug\The character.exe.config
+D:\GitHub\Various\C#\The character\bin\Debug\The character.exe
+D:\GitHub\Various\C#\The character\bin\Debug\The character.pdb
+D:\GitHub\Various\C#\The character\obj\Debug\The character.csprojAssemblyReference.cache
+D:\GitHub\Various\C#\The character\obj\Debug\The character.csproj.CoreCompileInputs.cache
+D:\GitHub\Various\C#\The character\obj\Debug\The character.exe
+D:\GitHub\Various\C#\The character\obj\Debug\The character.pdb

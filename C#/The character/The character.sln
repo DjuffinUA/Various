@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The character", "The character.csproj", "{7E32052A-A2C0-4FC2-9DA1-7F26C062FC74}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Сharacter Interface", "..\Сharacter Interface\Сharacter Interface.csproj", "{9B21447E-72BE-4AD1-B8BA-CC6DA17038A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7E32052A-A2C0-4FC2-9DA1-7F26C062FC74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E32052A-A2C0-4FC2-9DA1-7F26C062FC74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E32052A-A2C0-4FC2-9DA1-7F26C062FC74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B21447E-72BE-4AD1-B8BA-CC6DA17038A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B21447E-72BE-4AD1-B8BA-CC6DA17038A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B21447E-72BE-4AD1-B8BA-CC6DA17038A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B21447E-72BE-4AD1-B8BA-CC6DA17038A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

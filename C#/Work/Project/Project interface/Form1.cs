@@ -113,12 +113,14 @@ namespace Project_interface
 
         private static void Write(string path, string[,] text) // FUNCTION
         {
-            string NewText = text[0, 0] + ";" + text[0, 1] + ";" + text[0, 2] + ";" + text[0, 3] + ";" + text[0, 4] + ";" + "\n";
+            string NewText = text[0, 0] + ";" + text[0, 1] + ";" + text[0, 2] + ";" + text[0, 3] + ";" + text[0, 4] + ";" + "Total" + ";" + "\n";
 
             string[] count = (string[])Array.CreateInstance(typeof(string), text.GetLength(0));
+            
 
             for (int i = 1; i < text.GetLength(0); i++)
             {
+                int total = 1;
                 if (text[i, 0] != count[i])
                 {
                     for (int n = i + 1; n < text.GetLength(0); n++)
@@ -127,10 +129,11 @@ namespace Project_interface
                         {
                             text[i, 0] = (text[i, 0] + ", " + text[n, 0]);
                             count[n] = text[n, 0];
+                            total++;
                         }
                     }
 
-                    NewText = NewText + text[i, 0] + ";" + text[i, 1] + ";" + text[i, 2] + ";" + text[i, 3] + ";" + text[i, 4] + ";" + "\n";
+                    NewText = NewText + text[i, 0] + ";" + text[i, 1] + ";" + text[i, 2] + ";" + text[i, 3] + ";" + text[i, 4] + ";" + total + ";" +  "\n";
 
                     //i = i + count;
 

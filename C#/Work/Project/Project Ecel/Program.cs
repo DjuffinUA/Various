@@ -54,22 +54,15 @@ namespace HelloApp
             const int st = 5;  // количество столбцов в конечной таблице
             string[] masivtext = text.Split('\n');
             string[,] NewMasive = (string[,])Array.CreateInstance(typeof(string), masivtext.Length - 1, st); // создание масива по количеству строк
-            //string[] masivtext = text.Split('\n');
+            
             for ( int i = 0; i < masivtext.Length - 1; i++)
             {
                 string NewText = string.Join(";", masivtext[i]);
                 string[] masivNewText = NewText.Split(';');
-                //if (masivNewText[i] != "")
-                //{
                     for (int l = 0; l < st; l++)
                     {
                         NewMasive[i, l] = masivNewText[l];
                     }
-                //} else
-                //{
-                    //break;
-                //}
-                
             }
 
             return NewMasive;
@@ -96,19 +89,6 @@ namespace HelloApp
 
                     NewText = NewText + text[i, 0] + ";" + text[i, 1] + ";" + text[i, 2] + ";" + text[i, 3] + ";" + text[i, 4] + ";" + "\n";
 
-                    //i = i + count;
-
-                    /*int n = i - 1;
-                    if (text[n, 1] == text[i, 1] && text[n, 2] == text[i, 2] && text[n, 3] == text[i, 3] && text[n, 4] == text[i, 4])
-                    {
-                        text[n, 0] = text[n, 0] + text[i, 0];
-                        NewText = NewText + text[n, 0] + ";" + text[n, 1] + ";" + text[n, 2] + ";" + text[n, 3] + ";" + text[i, 4] + ";" + "\n";
-                        //i++;
-                    }
-                    else
-                    {
-                        NewText = NewText + text[i, 0] + ";" + text[i, 1] + ";" + text[i, 2] + ";" + text[i, 3] + ";" + text[i, 4] + ";" + "\n";
-                    }*/
                 }
             }
 

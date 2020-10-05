@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project Ecel", "Project Ece
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project interface", "..\Project interface\Project interface.csproj", "{13CB42AD-2683-4E69-AD02-3C5903A7F636}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excel v1.2", "..\Excel v1.2\Excel v1.2.csproj", "{BE7B3DAC-83E8-4416-A845-DFEDDD1CA8EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{13CB42AD-2683-4E69-AD02-3C5903A7F636}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13CB42AD-2683-4E69-AD02-3C5903A7F636}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13CB42AD-2683-4E69-AD02-3C5903A7F636}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE7B3DAC-83E8-4416-A845-DFEDDD1CA8EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE7B3DAC-83E8-4416-A845-DFEDDD1CA8EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE7B3DAC-83E8-4416-A845-DFEDDD1CA8EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE7B3DAC-83E8-4416-A845-DFEDDD1CA8EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,11 @@
+D:\GitHub\Various\C#\Work\Project\Excel v1.3\bin\Debug\Excel v1.3.exe.config
+D:\GitHub\Various\C#\Work\Project\Excel v1.3\bin\Debug\Excel v1.3.exe
+D:\GitHub\Various\C#\Work\Project\Excel v1.3\bin\Debug\Excel v1.3.pdb
+D:\GitHub\Various\C#\Work\Project\Excel v1.3\obj\Debug\Excel v1.3.csprojAssemblyReference.cache
+D:\GitHub\Various\C#\Work\Project\Excel v1.3\obj\Debug\Excel_v1._3.Form1.resources
+D:\GitHub\Various\C#\Work\Project\Excel v1.3\obj\Debug\Excel_v1._3.F_Help.resources
+D:\GitHub\Various\C#\Work\Project\Excel v1.3\obj\Debug\Excel_v1._3.Properties.Resources.resources
+D:\GitHub\Various\C#\Work\Project\Excel v1.3\obj\Debug\Excel v1.3.csproj.GenerateResource.cache
+D:\GitHub\Various\C#\Work\Project\Excel v1.3\obj\Debug\Excel v1.3.csproj.CoreCompileInputs.cache
+D:\GitHub\Various\C#\Work\Project\Excel v1.3\obj\Debug\Excel v1.3.exe
+D:\GitHub\Various\C#\Work\Project\Excel v1.3\obj\Debug\Excel v1.3.pdb

@@ -25,7 +25,6 @@ namespace Excel_v1._3
         string Kolonka4 = null;
         string Kolonka5 = null;
         int k2, k3, k4, k5;
-        List<string[]> Colum_All = new List<string[]>();
         string Colum_Text = null;
 
         private void B_Open_Click(object sender, EventArgs e)
@@ -35,11 +34,11 @@ namespace Excel_v1._3
             if (openFile.ShowDialog() == DialogResult.Cancel)
                 return;
             PathIN = Path.GetFullPath(openFile.FileName);
-            string fileText = File.ReadAllText(PathIN);
+            string fileText = File.ReadAllText(PathIN, Encoding.Default);
             B_Text.Text = fileText;
 
             string line;
-            StreamReader file =new StreamReader(PathIN);
+            StreamReader file =new StreamReader(PathIN, Encoding.Default);
             for (int i = 0; i < 1; i++)
             {
                 line = file.ReadLine();
@@ -75,9 +74,8 @@ namespace Excel_v1._3
             if (Kolonka3 != null) n++;
             if (Kolonka4 != null) n++;
             if (Kolonka5 != null) n++;
-            List<string> new_table = new List<string>();
 
-            StreamReader file = new StreamReader(PathIN, System.Text.Encoding.Default); // Title
+            StreamReader file = new StreamReader(PathIN, Encoding.Default); // Title
             for (int i = 0; i < 1; i++)
             {
                 title = file.ReadLine();
@@ -91,7 +89,7 @@ namespace Excel_v1._3
                 if (Kolonka5 == masiv_title[i]) k5 = i;
             }
 
-            StreamReader sr = new StreamReader(PathIN, System.Text.Encoding.Default); // new string file format(colum)
+            StreamReader sr = new StreamReader(PathIN, Encoding.Default); // new string file format(colum)
             string line;
             while ((line = sr.ReadLine()) != null)
             {
@@ -247,10 +245,19 @@ namespace Excel_v1._3
                 }
             }
 
-            using (StreamWriter sw = new StreamWriter(PathOut, false, System.Text.Encoding.Default))
+            using (StreamWriter sw = new StreamWriter(PathOut, false, Encoding.Default))
             {
                 sw.WriteLine(New_Text);
             }
+
+            Colum_2.Items.Clear();
+            Colum_3.Items.Clear();
+            Colum_4.Items.Clear();
+            Colum_5.Items.Clear();
+            Kolonka2 = null;
+            Kolonka3 = null;
+            Kolonka4 = null;
+            Kolonka5 = null;
 
         }
 

@@ -1,0 +1,9 @@
+D:\GitHub\Various\C#\Work\Rename Files\bin\Release\Rename Files.exe.config
+D:\GitHub\Various\C#\Work\Rename Files\bin\Release\Rename Files.exe
+D:\GitHub\Various\C#\Work\Rename Files\bin\Release\Rename Files.pdb
+D:\GitHub\Various\C#\Work\Rename Files\obj\Release\Rename_Files.Form1.resources
+D:\GitHub\Various\C#\Work\Rename Files\obj\Release\Rename_Files.Properties.Resources.resources
+D:\GitHub\Various\C#\Work\Rename Files\obj\Release\Rename Files.csproj.GenerateResource.cache
+D:\GitHub\Various\C#\Work\Rename Files\obj\Release\Rename Files.csproj.CoreCompileInputs.cache
+D:\GitHub\Various\C#\Work\Rename Files\obj\Release\Rename Files.exe
+D:\GitHub\Various\C#\Work\Rename Files\obj\Release\Rename Files.pdb

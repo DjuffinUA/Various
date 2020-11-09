@@ -1,0 +1,9 @@
+D:\GitHub\Various\C#\Work\Test rename\bin\Debug\Test rename.exe.config
+D:\GitHub\Various\C#\Work\Test rename\bin\Debug\Test rename.exe
+D:\GitHub\Various\C#\Work\Test rename\bin\Debug\Test rename.pdb
+D:\GitHub\Various\C#\Work\Test rename\obj\Debug\Test_rename.Form1.resources
+D:\GitHub\Various\C#\Work\Test rename\obj\Debug\Test_rename.Properties.Resources.resources
+D:\GitHub\Various\C#\Work\Test rename\obj\Debug\Test rename.csproj.GenerateResource.cache
+D:\GitHub\Various\C#\Work\Test rename\obj\Debug\Test rename.csproj.CoreCompileInputs.cache
+D:\GitHub\Various\C#\Work\Test rename\obj\Debug\Test rename.exe
+D:\GitHub\Various\C#\Work\Test rename\obj\Debug\Test rename.pdb

@@ -60,22 +60,72 @@ namespace Rename_Files
                     string newFileFullPath = Path.Combine(file.DirectoryName, newFileName);
                     File.Move(file.FullName, newFileFullPath);
                 }
-            MessageBox.Show("Готово!");
+
+                MessageBox.Show("Готово!");
             }
         }
 
         private void Button_Replace_Click(object sender, EventArgs e)
         {
-            IEnumerable<FileInfo> filesToRename = Directory.GetFiles(Dir).Select(f => new FileInfo(f));
-            foreach (FileInfo file in filesToRename)
+            if (Dir == null)
             {
-                if (TextBox_ToFind.Text == Path.GetFileNameWithoutExtension(file.Name))
+                MessageBox.Show("Выбирите папку!");
+            }
+            else
+            {
+                if (TextBox_ToFind.Text == "")
                 {
-                    string newFileName = $@"{TextBox_Replace.Text}{file.Extension}";
-                    string newFileFullPath = Path.Combine(file.DirectoryName, newFileName);
-                    File.Move(file.FullName, newFileFullPath);
+                    MessageBox.Show("Пустое поле поиска");
+                }
+                else
+                {
+                    if (TextBox_Replace.Text == "")
+                    {
+                        MessageBox.Show("Пустое поле замены");
+                    }
+                    else
+                    {
+                        string ToFind = TextBox_ToFind.Text.ToLower();
+                        string LogText = null;
+                        int i = 0;
+
+                        IEnumerable<FileInfo> filesToRename = Directory.GetFiles(Dir).Select(f => new FileInfo(f));
+                        foreach (FileInfo file in filesToRename)
+                        {
+                            if (Path.GetFileNameWithoutExtension(file.Name) != "LogRename" & Path.GetFileNameWithoutExtension(file.Name) != "logrename")
+                            {
+                                if (Path.GetFileNameWithoutExtension(file.Name).IndexOf(ToFind) != -1)
+                                {
+                                    string newFileName = $@"{Path.GetFileNameWithoutExtension(file.Name).ToLower().Replace(ToFind, TextBox_Replace.Text)}{file.Extension}";
+                                    string newFileFullPath = Path.Combine(file.DirectoryName, newFileName);
+                                    File.Move(file.FullName, newFileFullPath);
+                                    LogText = LogText + DateTime.Now + " " + file.FullName + " -> " + newFileFullPath + " ;\n";
+                                    i++;
+                                }
+                                else if ((Path.GetFileNameWithoutExtension(file.Name).ToLower().IndexOf(ToFind) != -1))
+                                {
+                                    string newFileName = $@"{Path.GetFileNameWithoutExtension(file.Name).ToLower().Replace(ToFind, TextBox_Replace.Text)}{file.Extension}";
+                                    string newFileFullPath = Path.Combine(file.DirectoryName, newFileName);
+                                    File.Move(file.FullName, newFileFullPath);
+                                    LogText = LogText + DateTime.Now + " " + file.FullName + " -> " + newFileFullPath + " ;\n";
+                                    i++;
+                                }
+                            }
+                        }
+
+                        if (i == 0)
+                        {
+                            MessageBox.Show("Совпадения не найдены!");
+                        }
+                        else
+                        {
+                            File.AppendAllText(Dir + "\\LogRename.txt", LogText);
+                            MessageBox.Show("Готово!");
+                        }
+                    }
                 }
             }
+            
         }
 
         private void Lable_Dir_MouseDown(object sender, MouseEventArgs e)

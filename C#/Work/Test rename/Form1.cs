@@ -48,32 +48,55 @@ namespace Test_rename
 
         private void Button_Run_Click(object sender, EventArgs e)
         {
-            if (TextBox_Find.Text != null)
+            if (TextBox_Find.Text == "")
             {
-                if (TextBox_Rename.Text != null)
-                {
-                    string Find = TextBox_Find.Text;
-                    char[] Symbol = Find.ToCharArray();
-
-                    if (Symbol[0] == '*')
-                    {
-
-                    }
-
-                    for (int i = 0; i < FileName.Count; i++)
-                    {
-                       
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("");
-                }
-                    
+                MessageBox.Show("Пустое поле поиска");
             }
             else 
             {
-                MessageBox.Show("");
+                if (TextBox_Rename.Text == "")
+                {
+                    MessageBox.Show("Пустое поле замены");
+                }
+                else
+                {
+                    string[] AllFiles = Directory.GetFiles(Dir, TextBox_Find.Text);
+                    string LogText = null;
+
+                    List<string> FullNameFile = new List<string>();
+                    List<string> NameFile = new List<string>();
+                    List<string> PointEXE = new List<string>();
+
+                    if (AllFiles.Length > 0)
+                    {
+                        for (int i = 0; i < AllFiles.Length; i++)
+                        {
+                            string[] list = AllFiles[i].Split('\\');
+                            FullNameFile.Add(list[list.Length - 1]);
+                        }
+
+                        foreach (string i in FullNameFile)
+                        {
+                            string[] abc = i.Split('.');
+                            NameFile.Add(abc[0]);
+                            PointEXE.Add(abc[1]);
+                        }
+
+                        for (int i = 0; i < AllFiles.Length; i++)
+                        {
+                            string OldFile = Dir + "\\" + NameFile[i] + "." + PointEXE[i];
+                            string NewFile = Dir + "\\" + TextBox_Rename.Text + "." + PointEXE[i];
+                            LogText = LogText + DateTime.Now + " Был переименован файл - " + OldFile + " на " + NewFile + "; \n";
+                            File.Move(OldFile, NewFile);
+                        }
+                        File.AppendAllText(Dir + "\\LogRename.txt", LogText);
+                        MessageBox.Show("Готово!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Совпадений не найденно!");
+                    }
+                }                
             }
         }
     }

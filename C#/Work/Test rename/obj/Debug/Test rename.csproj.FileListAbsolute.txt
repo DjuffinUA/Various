@@ -7,3 +7,4 @@ D:\GitHub\Various\C#\Work\Test rename\obj\Debug\Test rename.csproj.GenerateResou
 D:\GitHub\Various\C#\Work\Test rename\obj\Debug\Test rename.csproj.CoreCompileInputs.cache
 D:\GitHub\Various\C#\Work\Test rename\obj\Debug\Test rename.exe
 D:\GitHub\Various\C#\Work\Test rename\obj\Debug\Test rename.pdb
+D:\GitHub\Various\C#\Work\Test rename\obj\Debug\Test rename.csprojAssemblyReference.cache

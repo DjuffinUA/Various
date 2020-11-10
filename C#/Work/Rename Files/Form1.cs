@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Rename_Files
@@ -19,35 +16,37 @@ namespace Rename_Files
         }
 
         string Dir = null;
-        
+        string LogText = null;
+        int i = 0;
+        int a = 0;
+
         private void Button_Dir_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog FBD = new FolderBrowserDialog();
             FBD.ShowNewFolderButton = false;
             if (FBD.ShowDialog() == DialogResult.OK)
             {
-                Dir =  FBD.SelectedPath;
+                Dir = FBD.SelectedPath;
             }
-            Label_DirLable.Visible = true;
-            Lable_Dir.Visible = true;
-            Lable_Rename.Visible = true;
-            TextBox_NewName.Visible = true;
-            Buton_Rename.Visible = true;
-            if ( Dir == "C:\\Windows" | Dir == "C:\\Program Files (x86)" | Dir == "C:\\Program Files" | Dir == "C:\\Users" | Dir == "C:\\" )
+
+            if (Dir != null & Dir != "")
             {
-                Lable_Dir.BackColor = Color.Red;
-                Lable_Dir.Text = Dir;
-            } 
+                Buton_Rename.Visible = true;
+                Button_Replace.Visible = true;
+
+                DirColor(Dir);
+            }
             else
             {
-                Lable_Dir.Text = Dir;
-                Lable_Dir.BackColor = Color.Transparent;
+                MessageBox.Show("Папка не выбрана!");
             }
         }
 
         private void Buton_Rename_Click(object sender, EventArgs e)
         {
-            if (Lable_Dir.BackColor == Color.Red) 
+            a = 1;
+
+            if (Lable_Dir.BackColor == Color.Red)
             {
                 MessageBox.Show("Выбрана одна из системных дерикторий!");
             }
@@ -55,18 +54,30 @@ namespace Rename_Files
             {
                 IEnumerable<FileInfo> filesToRename = Directory.GetFiles(Dir).Select(f => new FileInfo(f));
                 foreach (FileInfo file in filesToRename)
+                {
+                    if (Path.GetFileNameWithoutExtension(file.Name) != "LogRename" & Path.GetFileNameWithoutExtension(file.Name) != "logrename")
                     {
-                    string newFileName = $@"{TextBox_NewName.Text}{Path.GetFileNameWithoutExtension(file.Name)}{file.Extension}";
-                    string newFileFullPath = Path.Combine(file.DirectoryName, newFileName);
-                    File.Move(file.FullName, newFileFullPath);
+                        string newFileName = $@"{TextBox_NewName.Text}{Path.GetFileNameWithoutExtension(file.Name)}{file.Extension}";
+                        string newFileFullPath = Path.Combine(file.DirectoryName, newFileName);
+                        File.Move(file.FullName, newFileFullPath);
+                        LogText = LogText + DateTime.Now + " " + file.FullName + " -> " + newFileFullPath + " ;\n";
+                        i++;
+                    }
                 }
 
-                MessageBox.Show("Готово!");
+                MessageBoxRun(i, a, LogText);
+
             }
+
+            i = 0;
+            a = 0;
+
         }
 
         private void Button_Replace_Click(object sender, EventArgs e)
         {
+            a = 2;
+
             if (Dir == null)
             {
                 MessageBox.Show("Выбирите папку!");
@@ -86,8 +97,6 @@ namespace Rename_Files
                     else
                     {
                         string ToFind = TextBox_ToFind.Text.ToLower();
-                        string LogText = null;
-                        int i = 0;
 
                         IEnumerable<FileInfo> filesToRename = Directory.GetFiles(Dir).Select(f => new FileInfo(f));
                         foreach (FileInfo file in filesToRename)
@@ -112,33 +121,98 @@ namespace Rename_Files
                                 }
                             }
                         }
-
-                        if (i == 0)
-                        {
-                            MessageBox.Show("Совпадения не найдены!");
-                        }
-                        else
-                        {
-                            File.AppendAllText(Dir + "\\LogRename.txt", LogText);
-                            MessageBox.Show("Готово!");
-                        }
                     }
+
+                    MessageBoxRun(i, a, LogText);
+
                 }
             }
-            
+
+            i = 0;
+            a = 0;
+
         }
 
         private void Lable_Dir_MouseDown(object sender, MouseEventArgs e)
         {
-            if (Dir != null)
+            if (Lable_Dir.BackColor == Color.Red)
             {
-                MessageBox.Show(Dir);
+                MessageBox.Show("Выбрана одна из системных дерикторий!");
             }
             else
             {
-                MessageBox.Show("Выбирите папку!");
+                if (Dir != null)
+                {
+                    MessageBox.Show(Dir);
+                }
+                else
+                {
+                    MessageBox.Show("Выбирите папку!");
+                }
             }
-            
+
+
+        }
+
+        private void MessageBoxRun(int i, int a, string LogText)
+        {
+            if (i == 0)
+            {
+                if (a == 2)
+                {
+                    MessageBox.Show("Совпадения не найдены!");
+                }
+                else if (a == 1)
+                {
+                    MessageBox.Show("Нет файлов в папке!");
+                }
+            }
+            else
+            {
+                File.AppendAllText(Dir + "\\LogRename.txt", LogText);
+                MessageBox.Show("Готово!");
+            }
+        }
+
+        private void DirColor(string Dir)
+        {
+
+            List<string> FullDir = new List<string>
+            {
+                 Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                 Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
+                 Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                 Environment.GetFolderPath(Environment.SpecialFolder.AdminTools),
+                 Environment.GetFolderPath(Environment.SpecialFolder.CommonAdminTools),
+                 Environment.GetFolderPath(Environment.SpecialFolder.Cookies),
+                 Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory),
+                 Environment.GetFolderPath(Environment.SpecialFolder.Fonts),
+                 Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles),
+                 Environment.GetEnvironmentVariable("ProgramW6432"),
+                 Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86),
+                 Environment.GetFolderPath(Environment.SpecialFolder.Programs),
+                 Environment.GetFolderPath(Environment.SpecialFolder.StartMenu),
+                 Environment.GetFolderPath(Environment.SpecialFolder.Startup),
+                 Environment.GetFolderPath(Environment.SpecialFolder.System),
+                 Environment.GetFolderPath(Environment.SpecialFolder.SystemX86),
+                 Environment.GetFolderPath(Environment.SpecialFolder.Windows)
+            };
+
+            foreach (string path in FullDir)
+            {
+                if (path.IndexOf(Dir) != -1)
+                {
+                    Lable_Dir.BackColor = Color.Red;
+                    Lable_Dir.Text = Dir;
+                    break;
+                }
+                else
+                {
+                    Lable_Dir.Text = Dir;
+                    Lable_Dir.BackColor = Color.Transparent;
+                }
+            }
+
         }
     }
 }

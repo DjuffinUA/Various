@@ -113,6 +113,7 @@
             this.Button_Replace.TabIndex = 7;
             this.Button_Replace.Text = "Заменить";
             this.Button_Replace.UseVisualStyleBackColor = true;
+            this.Button_Replace.Visible = false;
             this.Button_Replace.Click += new System.EventHandler(this.Button_Replace_Click);
             // 
             // Lable_Rename
